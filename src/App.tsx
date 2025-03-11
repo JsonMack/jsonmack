@@ -8,7 +8,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import NavigationBar from "./components/NavigationBar";
-import { Accordion, AccordionDetails, AccordionSummary, Collapse, Stack, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from "@mui/material";
 import ExperienceComponent from "./components/ExperienceComponent";
 import EducationComponent from "./components/EducationComponent";
 import { ExpandMoreOutlined } from "@mui/icons-material";
