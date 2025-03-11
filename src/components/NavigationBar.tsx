@@ -8,7 +8,10 @@ import { GitHub, LinkedIn } from "@mui/icons-material";
 
 export default function NavigationBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ 
+      flexGrow: 1,
+      marginBottom: 1
+      }}>
       <AppBar position="static" color="primary">
         <Toolbar>
           <IconButton
@@ -27,11 +30,11 @@ export default function NavigationBar() {
           </Typography>
 
           
-            <IconButton>
+            <IconButton href="https://github.com/jsonmack" target="source">
               <GitHub />
             </IconButton>
 
-            <IconButton>
+            <IconButton href="https://linkedin.com/in/jason-mackeigan-001/" target="source">
               <LinkedIn />
             </IconButton>
         </Toolbar>

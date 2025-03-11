@@ -9,6 +9,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import NavigationBar from "./components/NavigationBar";
 import { Stack } from "@mui/material";
+import ExperienceComponent from "./components/ExperienceComponent";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,7 +23,7 @@ export default function App() {
       <NavigationBar />
 
       <Stack spacing={3}>
-        
+        <ExperienceComponent/>
       </Stack>
 
       <CssBaseline />
