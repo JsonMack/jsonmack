@@ -8,25 +8,54 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import NavigationBar from "./components/NavigationBar";
-import { Stack } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Collapse, Stack, Typography } from "@mui/material";
 import ExperienceComponent from "./components/ExperienceComponent";
+import EducationComponent from "./components/EducationComponent";
+import { ExpandMoreOutlined } from "@mui/icons-material";
+import React, { ReactNode } from "react";
 
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
     mode: "dark",
   },
+  colorSchemes: {
+    dark: true,
+    light: true
+  },
+  typography: {
+    fontSize: 16,
+  }
 });
 
 export default function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <NavigationBar />
 
-      <Stack spacing={3}>
-        <ExperienceComponent/>
+      <Stack spacing={2}>
+        <Section title="Experience" component={<ExperienceComponent/>} />
+        <Section title="Education" component={<EducationComponent/>} />
       </Stack>
 
       <CssBaseline />
     </ThemeProvider>
+  );
+}
+
+function Section({component, title} : { component: ReactNode, title: string}) : React.ReactElement {
+  return (
+    <>
+      <Accordion defaultExpanded>
+      <AccordionSummary
+        expandIcon={<ExpandMoreOutlined />}
+      >
+        <Typography component="span" variant="h6">{title}</Typography>
+      </AccordionSummary>
+      
+      <AccordionDetails>
+        { component }
+      </AccordionDetails>
+    </Accordion>
+    </>
   );
 }
